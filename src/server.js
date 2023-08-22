@@ -13,24 +13,31 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(express.static(path.join(__dirname,'public')));
-app.use(express.static(path.join(__dirname,'html')));
+// app.use(express.static(path.join(__dirname,'html')));
 app.set('view engine', 'html');
 
 
 //Routes
 
 
-
-
 app.get('/', async (req, res) => {
-  // return res.send('index.html')
-  
- return res.render("index")
-  // return res.sendFile(path.join(__dirname, 'public/index.html'));
-  // res.json({ id: uuidv4() })
-  res.status(404).json({ "msg": "Resource not found" })
+    // return res.send('index.html')
+    
+   res.json({msg:"Hello from /"})
+   
+  })
 
-})
+app.get('/index', async (req, res) => {
+    // return res.send('index.html')
+    
+   return res.render("index")
+    // return res.sendFile(path.join(__dirname, 'public/index.html'));
+    // res.json({ id: uuidv4() })
+    res.status(404).json({ "msg": "Resource not found" })
+  
+  })
+
+
 app.get('/page', async (req, res) => {
  
   return res.sendFile(path.join(__dirname, 'public/page.html'));
