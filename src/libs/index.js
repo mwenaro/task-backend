@@ -1,0 +1,1 @@
+export {default as dbCon} from "./sqliteCon.mjs"
