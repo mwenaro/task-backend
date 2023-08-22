@@ -37,6 +37,13 @@ app.get('/index', async (req, res) => {
   
   })
 
+  app.get("/users",(req,res)=>{
+    res.json([
+        {name:"mwwero", age:40   },
+        {name: "hussein", age: 33}
+    ])
+  })
+
 
 app.get('/page', async (req, res) => {
  
