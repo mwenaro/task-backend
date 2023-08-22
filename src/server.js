@@ -45,12 +45,19 @@ app.get('/index', async (req, res) => {
   })
 
 
-app.get('/page', async (req, res) => {
+  app.get('/page', async (req, res) => {
  
-  return res.sendFile(path.join(__dirname, 'public/page.html'));
- 
+    return res.sendFile(path.join(__dirname, 'public/page.html'));
+   
+  
+  })
 
-})
+  app.get('*', async (req, res) => {
+ 
+    res.status(401).json({msg:"Hello has occurted"})
+   
+  
+  })
 
 
 
