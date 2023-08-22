@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(express.static(path.join(__dirname,'public')));
-app.use(express.static(path.join(__dirname,'html')));
+app.use(express.static(path.join(__dirname,'src/html')));
 app.set('view engine', 'html');
 
 
@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
 })
 app.get('/page', async (req, res) => {
  
-  return res.sendFile(path.join(__dirname, 'public/page.html'));
+  return res.sendFile(path.join(__dirname, 'src/public/page.html'));
  
 
 })
